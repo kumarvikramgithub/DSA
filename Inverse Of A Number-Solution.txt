@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+  Scanner scn =new Scanner(System.in);
+  long n=scn.nextLong();
+  long temp=n;
+  int nod=0,div=1;
+  while(temp>0){
+    nod++;
+    temp/=10;
+  }
+  long i=0,j=0;
+  while(nod>0){
+      j++;
+      long r=n%10;
+      int divr=1;
+      for(int k=1;k<r;k++){
+          divr*=10;
+      }
+      i=i+j*divr;
+      n/=10;
+      nod--;
+  }
+  System.out.println(i);
+ }
+}

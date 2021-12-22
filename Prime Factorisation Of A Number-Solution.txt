@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Main{
+
+  public static void main(String[] args) {
+    Scanner scn =new Scanner(System.in);
+    long n=scn.nextLong();
+    int primefact=2; 
+    while(n>1){
+      boolean isPrimeFact=isPrimeFactNumber(primefact);
+      if(isPrimeFact==true && n%primefact==0){
+        System.out.print(primefact+" ");
+        n/=primefact; 
+      }else{
+        primefact++;
+      }
+
+    } 
+  }
+  public static boolean isPrimeFactNumber(int primefact){
+    boolean isprime=true;
+    for(int i=2;i*i<=primefact;i++){
+      if(primefact%i==0){
+        isprime=false;
+        break;
+      }
+    }
+    return isprime;
+  }
+ }
